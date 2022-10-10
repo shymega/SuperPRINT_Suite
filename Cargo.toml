@@ -1,0 +1,2 @@
+[workspace]
+members = ["./print4all_core", "./print4all_web"]
