@@ -1,5 +1,5 @@
 [workspace]
-members = ["print4all_core", "print4all_web"]
+members = ["src/superprint_shared", "src/superprint_web"]
 
 [profile.dev]
 lto = true
