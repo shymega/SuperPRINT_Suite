@@ -4,4 +4,4 @@ version = "0.1.0"
 edition = "2021"
 
 [dependencies]
-ipp = "3.0.3"
+ipp = "4.0.0"

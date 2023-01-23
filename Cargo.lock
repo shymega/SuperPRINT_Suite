@@ -30,7 +30,7 @@ dependencies = [
  "actix-service",
  "actix-utils",
  "ahash",
- "base64",
+ "base64 0.13.0",
  "bitflags",
  "brotli",
  "bytes",
@@ -233,6 +233,12 @@ name = "base64"
 version = "0.13.0"
 source = "registry+https://github.com/rust-lang/crates.io-index"
 checksum = "904dfeac50f3cdaba28fc6f57fdcddb75f49ed61346676a78c4ffe55877802fd"
+
+[[package]]
+name = "base64"
+version = "0.21.0"
+source = "registry+https://github.com/rust-lang/crates.io-index"
+checksum = "a4a4ddaa51a5bc52a6948f74c06d20aaaddb71924eab79b8c97a8c556e942d6a"
 
 [[package]]
 name = "bitflags"
@@ -699,10 +705,11 @@ checksum = "879d54834c8c76457ef4293a689b2a8c59b076067ad77b15efafbb05f92a592b"
 
 [[package]]
 name = "ipp"
-version = "3.0.3"
+version = "4.0.0"
 source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "909713c023262485c5e988ac7a3b54546e9b8d2ee6619b8521f11b877c058169"
+checksum = "1e7b0eab10b390276c3e4f60cd9c17204411a65598f4080b45cd8fe44fcfea89"
 dependencies = [
+ "base64 0.21.0",
  "bytes",
  "enum-as-inner",
  "enum-primitive-derive",
@@ -710,10 +717,12 @@ dependencies = [
  "futures-util",
  "http",
  "log",
+ "native-tls",
  "num-traits",
  "reqwest",
  "thiserror",
  "tokio-util",
+ "ureq",
 ]
 
 [[package]]
@@ -976,20 +985,6 @@ source = "registry+https://github.com/rust-lang/crates.io-index"
 checksum = "5b40af805b3121feab8a3c29f04d8ad262fa8e0561883e7653e024ae4479e6de"
 
 [[package]]
-name = "print4all_shared"
-version = "0.1.0"
-dependencies = [
- "ipp",
-]
-
-[[package]]
-name = "print4all_web"
-version = "0.1.0"
-dependencies = [
- "actix-web",
-]
-
-[[package]]
 name = "proc-macro2"
 version = "1.0.46"
 source = "registry+https://github.com/rust-lang/crates.io-index"
@@ -1078,7 +1073,7 @@ version = "0.11.12"
 source = "registry+https://github.com/rust-lang/crates.io-index"
 checksum = "431949c384f4e2ae07605ccaa56d1d9d2ecdb5cadd4f9577ccfab29f2e5149fc"
 dependencies = [
- "base64",
+ "base64 0.13.0",
  "bytes",
  "encoding_rs",
  "futures-core",
@@ -1242,6 +1237,20 @@ checksum = "02e2d2db9033d13a1567121ddd7a095ee144db4e1ca1b1bda3419bc0da294ebd"
 dependencies = [
  "libc",
  "winapi",
+]
+
+[[package]]
+name = "superprint_shared"
+version = "0.1.0"
+dependencies = [
+ "ipp",
+]
+
+[[package]]
+name = "superprint_web"
+version = "0.1.0"
+dependencies = [
+ "actix-web",
 ]
 
 [[package]]
@@ -1432,6 +1441,19 @@ source = "registry+https://github.com/rust-lang/crates.io-index"
 checksum = "5c5713f0fc4b5db668a2ac63cdb7bb4469d8c9fed047b1d0292cc7b0ce2ba921"
 dependencies = [
  "tinyvec",
+]
+
+[[package]]
+name = "ureq"
+version = "2.6.2"
+source = "registry+https://github.com/rust-lang/crates.io-index"
+checksum = "338b31dd1314f68f3aabf3ed57ab922df95ffcd902476ca7ba3c4ce7b908c46d"
+dependencies = [
+ "base64 0.13.0",
+ "log",
+ "native-tls",
+ "once_cell",
+ "url",
 ]
 
 [[package]]
